@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["php82", "php82Packages.composer", "nginx"]
+nixPkgs = ["php82", "php82Packages.composer"]
 
 [phases.install]
 cmds = [
@@ -8,7 +8,6 @@ cmds = [
 
 [phases.build]
 cmds = [
-  "php artisan key:generate --force || true",
   "php artisan migrate --force || true",
   "php artisan config:clear",
   "php artisan config:cache",
